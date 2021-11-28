@@ -1,7 +1,8 @@
-package com.mustafayigit.apsiyonmovielistcase
+package com.mustafayigit.apsiyonmovielistcase.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.mustafayigit.apsiyonmovielistcase.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
