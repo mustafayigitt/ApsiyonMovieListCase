@@ -3,6 +3,8 @@ plugins {
     id("kotlin-android")
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
+    id("androidx.navigation.safeargs.kotlin")
+
 }
 
 android {
@@ -56,6 +58,10 @@ dependencies {
     // Hilt for DI
     implementation(Libraries.hiltAndroid)
     kapt(Libraries.hiltAndroidCompiler)
+
+    // Navigation
+    implementation(Libraries.navigationFragment)
+    implementation(Libraries.navigationUI)
 
     // Test
     testImplementation(Libraries.junit)

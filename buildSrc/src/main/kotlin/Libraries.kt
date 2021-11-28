@@ -10,7 +10,13 @@ object Libraries {
 
     // Hilt for DI
     const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hiltVersion}"
-    const val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hiltVersion}"
+    const val hiltAndroidCompiler =
+        "com.google.dagger:hilt-android-compiler:${Versions.hiltVersion}"
+
+    // Navigation
+    const val navigationFragment =
+        "androidx.navigation:navigation-fragment-ktx:${Versions.navVersion}"
+    const val navigationUI = "androidx.navigation:navigation-ui-ktx:${Versions.navVersion}"
 
     // Test
     const val junit = "junit:junit:${Versions.junitVersion}"
@@ -24,5 +30,7 @@ object Libraries {
         "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinVersion}"
     const val classpathHiltAndroidGradle =
         "com.google.dagger:hilt-android-gradle-plugin:${Versions.hiltVersion}"
+    const val classpathSafeArgs =
+        "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navVersion}"
 
 }

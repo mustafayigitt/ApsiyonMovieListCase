@@ -11,6 +11,9 @@ object Versions {
     // Hilt for DI
     const val hiltVersion = "2.39.1"
 
+    // Navigation
+    const val navVersion = "2.3.5"
+
     // Test
     const val junitVersion = "4.0.0"
     const val extJunitVersion = "1.1.3"

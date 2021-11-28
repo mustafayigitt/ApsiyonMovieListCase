@@ -8,6 +8,7 @@ buildscript {
         classpath(Libraries.classpathBuildGradle)
         classpath(Libraries.classpathKotlinGradle)
         classpath(Libraries.classpathHiltAndroidGradle)
+        classpath(Libraries.classpathSafeArgs)
 
 
         // NOTE: Do not place your application dependencies here; they belong
