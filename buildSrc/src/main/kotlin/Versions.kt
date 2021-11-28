@@ -8,6 +8,9 @@ object Versions {
     const val materialVersion = "1.4.0"
     const val constraintLayoutVersion = "2.1.2"
 
+    // Hilt for DI
+    const val hiltVersion = "2.39.1"
+
     // Test
     const val junitVersion = "4.0.0"
     const val extJunitVersion = "1.1.3"

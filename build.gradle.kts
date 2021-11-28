@@ -7,6 +7,8 @@ buildscript {
     dependencies {
         classpath(Libraries.classpathBuildGradle)
         classpath(Libraries.classpathKotlinGradle)
+        classpath(Libraries.classpathHiltAndroidGradle)
+
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
