@@ -5,12 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.mustafayigit.apsiyonmovielistcase.BuildConfig
 import com.mustafayigit.apsiyonmovielistcase.data.model.MovieModel
 import com.mustafayigit.apsiyonmovielistcase.databinding.AdapterItemMovieBinding
-import com.mustafayigit.apsiyonmovielistcase.util.dpToPx
 import com.mustafayigit.apsiyonmovielistcase.util.setImageWithGlide
-import kotlin.math.roundToInt
 
 class DiffCallback : DiffUtil.ItemCallback<MovieModel>() {
     override fun areItemsTheSame(
@@ -41,10 +39,12 @@ class MovieAdapter(
         fun bind(movie: MovieModel) {
             with(binding) {
                 txtMovieTitle.text = movie.title
-                txtMovieDate.text = movie.date
-                txtMovieRating.text = movie.rating.toString()
+                txtMovieDate.text = movie.releaseDate
+                txtMovieRating.text = movie.voteAverage.toString()
 
-                imgMovieCover.setImageWithGlide(movie.coverImageUrl,RoundedCorners(10.dpToPx().roundToInt()))
+                imgMovieCover.setImageWithGlide(
+                    BuildConfig.STATIC_URL + movie.coverImagePath
+                )
             }
         }
     }

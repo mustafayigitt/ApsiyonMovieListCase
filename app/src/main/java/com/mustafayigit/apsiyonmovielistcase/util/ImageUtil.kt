@@ -2,16 +2,16 @@ package com.mustafayigit.apsiyonmovielistcase.util
 
 import android.widget.ImageView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.BitmapTransformation
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.load.DecodeFormat
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 
 
 fun ImageView.setImageWithGlide(
     source: Any,
-    vararg transformation: BitmapTransformation
-){
+) {
     Glide.with(context)
         .load(source)
-        .transform(*transformation)
+        .format(DecodeFormat.PREFER_ARGB_8888)
+        .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
         .into(this)
 }

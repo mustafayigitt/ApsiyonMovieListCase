@@ -18,6 +18,12 @@ android {
         versionName = Configs.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
+        buildConfigField("String", "API_KEY", "\"bd7847090fea4f76f5ce0c22bd1a85b8\"")
+        buildConfigField("String", "STATIC_URL", "\"https://image.tmdb.org/t/p/w500\"")
+
+
     }
 
     buildTypes {
@@ -70,6 +76,7 @@ dependencies {
     // Glide
     implementation(Libraries.glide)
     implementation(Libraries.glideCompiler)
+
 
     // Retrofit
     implementation(Libraries.retrofit)
