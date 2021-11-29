@@ -21,6 +21,9 @@ object Versions {
     const val retrofitVersion = "2.9.0"
     const val okhttpVersion = "5.0.0-alpha.2"
 
+    // Room
+    const val roomVersion = "2.3.0"
+
     // Test
     const val junitVersion = "4.0.0"
     const val extJunitVersion = "1.1.3"

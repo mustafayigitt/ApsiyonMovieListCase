@@ -48,6 +48,13 @@ android {
     // Allow references to generated code
     kapt {
         correctErrorTypes = true
+        arguments {
+            arg("room.schemaLocation", "$projectDir/schemas")
+            arg("room.incremental", true)
+            arg("room.expandProjection", true)
+
+        }
+
     }
 
     viewBinding {
@@ -77,11 +84,15 @@ dependencies {
     implementation(Libraries.glide)
     implementation(Libraries.glideCompiler)
 
-
     // Retrofit
     implementation(Libraries.retrofit)
     implementation(Libraries.retrofitConverter)
     implementation(Libraries.okhttpLogging)
+
+    // Room
+    implementation(Libraries.room)
+    kapt(Libraries.roomCompiler)
+    implementation(Libraries.roomKtx)
 
     // Test
     testImplementation(Libraries.junit)
