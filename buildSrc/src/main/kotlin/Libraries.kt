@@ -18,6 +18,10 @@ object Libraries {
         "androidx.navigation:navigation-fragment-ktx:${Versions.navVersion}"
     const val navigationUI = "androidx.navigation:navigation-ui-ktx:${Versions.navVersion}"
 
+    // Glide
+    const val glide = "com.github.bumptech.glide:glide:${Versions.glideVersion}"
+    const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glideVersion}"
+
     // Test
     const val junit = "junit:junit:${Versions.junitVersion}"
     const val extJunit = "androidx.test.ext:junit:${Versions.extJunitVersion}"

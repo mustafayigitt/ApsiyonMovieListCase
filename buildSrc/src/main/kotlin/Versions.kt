@@ -14,6 +14,9 @@ object Versions {
     // Navigation
     const val navVersion = "2.3.5"
 
+    // Glide
+    const val glideVersion = "4.12.0"
+
     // Test
     const val junitVersion = "4.0.0"
     const val extJunitVersion = "1.1.3"

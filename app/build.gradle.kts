@@ -44,7 +44,7 @@ android {
         correctErrorTypes = true
     }
 
-    viewBinding{
+    viewBinding {
         isEnabled = true
     }
 }
@@ -66,6 +66,10 @@ dependencies {
     // Navigation
     implementation(Libraries.navigationFragment)
     implementation(Libraries.navigationUI)
+
+    // Glide
+    implementation(Libraries.glide)
+    implementation(Libraries.glideCompiler)
 
     // Test
     testImplementation(Libraries.junit)
