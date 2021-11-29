@@ -71,6 +71,11 @@ dependencies {
     implementation(Libraries.glide)
     implementation(Libraries.glideCompiler)
 
+    // Retrofit
+    implementation(Libraries.retrofit)
+    implementation(Libraries.retrofitConverter)
+    implementation(Libraries.okhttpLogging)
+
     // Test
     testImplementation(Libraries.junit)
     androidTestImplementation(Libraries.extJunit)

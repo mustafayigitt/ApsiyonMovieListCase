@@ -17,6 +17,10 @@ object Versions {
     // Glide
     const val glideVersion = "4.12.0"
 
+    // Retrofit
+    const val retrofitVersion = "2.9.0"
+    const val okhttpVersion = "5.0.0-alpha.2"
+
     // Test
     const val junitVersion = "4.0.0"
     const val extJunitVersion = "1.1.3"
