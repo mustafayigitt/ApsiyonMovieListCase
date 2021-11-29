@@ -3,14 +3,15 @@ package com.mustafayigit.apsiyonmovielistcase.ui
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import com.mustafayigit.apsiyonmovielistcase.adapter.MovieAdapter
 import com.mustafayigit.apsiyonmovielistcase.databinding.FragmentHomeBinding
 import com.mustafayigit.apsiyonmovielistcase.ui.base.BaseFragment
-import com.mustafayigit.apsiyonmovielistcase.util.*
+import com.mustafayigit.apsiyonmovielistcase.util.ResponseWrapper
+import com.mustafayigit.apsiyonmovielistcase.util.donOnScrolledToEnd
+import com.mustafayigit.apsiyonmovielistcase.util.printToast
+import com.mustafayigit.apsiyonmovielistcase.util.safeLog
 import com.mustafayigit.apsiyonmovielistcase.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlin.math.roundToInt
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
@@ -38,7 +39,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                 is ResponseWrapper.Success -> {
                     "Success: ${it.data}".safeLog()
                     (mBinding.recyclerMovies.adapter as MovieAdapter).submitList(it.data)
-
                 }
             }
         }
@@ -48,6 +48,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         with(mBinding) {
             recyclerMovies.adapter = MovieAdapter { movie ->
                 movie.toString() printToast requireContext()
+            }
+
+            recyclerMovies.donOnScrolledToEnd(homeViewModel.movies) {
+                homeViewModel.incrementCurrentPage()
+                homeViewModel.getMovies()
             }
         }
     }

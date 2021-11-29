@@ -40,7 +40,7 @@ class MovieAdapter(
         fun bind(movie: MovieModel) {
             with(binding) {
                 txtMovieTitle.text = movie.title
-                txtMovieReleaseDate.text = movie.releaseDate
+                txtMovieReleaseDate.text = movie.releaseDate.split("-").first()
                 "${movie.voteAverage} / 10".also { txtMovieVoteAverage.text = it }
 
                 val voteColor = getColorByVote(movie.voteAverage)
