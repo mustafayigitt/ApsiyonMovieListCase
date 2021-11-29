@@ -1,5 +1,6 @@
 package com.mustafayigit.apsiyonmovielistcase.adapter
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -39,12 +40,27 @@ class MovieAdapter(
         fun bind(movie: MovieModel) {
             with(binding) {
                 txtMovieTitle.text = movie.title
-                txtMovieDate.text = movie.releaseDate
-                txtMovieRating.text = movie.voteAverage.toString()
+                txtMovieReleaseDate.text = movie.releaseDate
+                "${movie.voteAverage} / 10".also { txtMovieVoteAverage.text = it }
 
-                imgMovieCover.setImageWithGlide(
+                val voteColor = getColorByVote(movie.voteAverage)
+                txtMovieVoteAverage.setTextColor(voteColor)
+                txtMovieVoteAverage.compoundDrawables.filterNotNull().firstOrNull()?.setTint(voteColor)
+
+                imgMovieCoverImage.setImageWithGlide(
                     BuildConfig.STATIC_URL + movie.coverImagePath
                 )
+            }
+        }
+
+        private fun getColorByVote(voteAverage: Double): Int{
+            return when {
+                voteAverage < 7.0 -> Color.parseColor("#d0021b")
+                voteAverage in 7.0..9.0 -> Color.parseColor("#f1a817")
+                voteAverage > 9.0 -> Color.parseColor("#4caf50")
+                else -> {
+                    throw Exception("invalid vote average!!")
+                }
             }
         }
     }

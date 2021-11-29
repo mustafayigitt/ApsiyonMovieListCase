@@ -3,6 +3,7 @@ package com.mustafayigit.apsiyonmovielistcase.ui
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.mustafayigit.apsiyonmovielistcase.adapter.MovieAdapter
 import com.mustafayigit.apsiyonmovielistcase.databinding.FragmentHomeBinding
 import com.mustafayigit.apsiyonmovielistcase.ui.base.BaseFragment
@@ -48,11 +49,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             recyclerMovies.adapter = MovieAdapter { movie ->
                 movie.toString() printToast requireContext()
             }
-            recyclerMovies.addItemDecoration(
-                CustomItemDecoration(
-                    spaceBottom = 20.dpToPx().roundToInt()
-                )
-            )
         }
     }
 }
