@@ -39,7 +39,9 @@ class MovieRepository @Inject constructor(
 
         return result
             .takeIf { it is ResponseWrapper.Success } ?: kotlin.run {
-            if ((result is ResponseWrapper.Error) and ((result as ResponseWrapper.Error).errorType == ErrorType.NETWORK_ERROR)) {
+            if (result !is ResponseWrapper.Error) return result
+
+            if (result.errorType == ErrorType.NETWORK_ERROR) {
                 "Movies from Local".safeLog()
                 ResponseWrapper.Success(local.getAllMovies())
             } else result
