@@ -1,9 +1,12 @@
 package com.mustafayigit.apsiyonmovielistcase.data.model
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parcelize
 
 @Entity(tableName = "movies")
+@Parcelize
 data class MovieModel(
     @PrimaryKey
     val id: String,
@@ -15,4 +18,4 @@ data class MovieModel(
     val popularity: Double,
     val voteAverage: Double,
     val voteCount: Int,
-)
+): Parcelable
