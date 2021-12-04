@@ -25,7 +25,7 @@
         android:clipToPadding="false"
         android:orientation="vertical"
         android:paddingHorizontal="16dp"
-        android:paddingBottom="110dp"
+        android:layout_marginBottom="110dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:itemCount="8"
         tools:listitem="@layout/adapter_item_movie" />
@@ -39,24 +39,9 @@
         android:paddingVertical="16dp">
 
         <com.mustafayigit.apsiyonmovielistcase.ui.component.DashedButton
+            android:id="@+id/btnHomeDashedButton"
             android:layout_width="match_parent"
             android:layout_height="50dp" />
-
-        <com.google.android.material.button.MaterialButton
-            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:text="Add"
-            android:textColor="@color/teal_700"
-            android:visibility="gone"
-            app:backgroundTint="@android:color/transparent"
-            app:cornerRadius="10dp"
-            app:icon="@drawable/ic_arrow_right"
-            app:iconGravity="textStart"
-            app:iconTint="@color/teal_700"
-            app:strokeColor="@color/teal_700"
-            app:strokeWidth="2dp" />
 
     </FrameLayout>
 
