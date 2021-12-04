@@ -24,7 +24,16 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
         initMovieRecycler()
         initObserver()
+        initListener()
 
+    }
+
+    private fun initListener() {
+        with(mBinding){
+            btnHomeDashedButton.setOnClickListener {
+                "Custom Button Click Event triggered" printToast requireContext()
+            }
+        }
     }
 
     private fun initObserver() {
